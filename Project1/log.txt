@@ -1,0 +1,570 @@
+2019-10-16 11:11:57.142 -05:00 [INF] Entity Framework Core 3.0.0 initialized 'BlockBusterContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-10-16 11:11:57.165 -05:00 [INF] Entity Framework Core 3.0.0 initialized 'BlockBusterContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-10-16 11:11:58.868 -05:00 [INF] Executing DbCommand [Parameters=[@__firstname_0='?' (Size = 50), @__lastname_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[FirstName], [c].[LastName], [o].[Date], [p].[Title], [p].[Price]
+FROM [Customers] AS [c]
+INNER JOIN [Orders] AS [o] ON [c].[CustomerID] = [o].[CustomerID]
+INNER JOIN [OrderDetails] AS [o0] ON [o].[OrderID] = [o0].[OrderID]
+INNER JOIN [Inventory] AS [i] ON [o0].[InventoryID] = [i].[InventoryID]
+INNER JOIN [Products] AS [p] ON [i].[ProductID] = [p].[ProductID]
+WHERE (([c].[FirstName] = @__firstname_0) AND @__firstname_0 IS NOT NULL) AND (([c].[LastName] = @__lastname_1) AND @__lastname_1 IS NOT NULL)
+2019-10-16 11:11:58.871 -05:00 [INF] Executing DbCommand [Parameters=[@__firstname_0='?' (Size = 50), @__lastname_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[FirstName], [c].[LastName], [o].[Date], [p].[Title], [p].[Price]
+FROM [Customers] AS [c]
+INNER JOIN [Orders] AS [o] ON [c].[CustomerID] = [o].[CustomerID]
+INNER JOIN [OrderDetails] AS [o0] ON [o].[OrderID] = [o0].[OrderID]
+INNER JOIN [Inventory] AS [i] ON [o0].[InventoryID] = [i].[InventoryID]
+INNER JOIN [Products] AS [p] ON [i].[ProductID] = [p].[ProductID]
+WHERE (([c].[FirstName] = @__firstname_0) AND @__firstname_0 IS NOT NULL) AND (([c].[LastName] = @__lastname_1) AND @__lastname_1 IS NOT NULL)
+2019-10-16 11:40:46.181 -05:00 [INF] Entity Framework Core 3.0.0 initialized 'BlockBusterContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-10-16 11:40:46.207 -05:00 [INF] Entity Framework Core 3.0.0 initialized 'BlockBusterContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-10-16 11:40:47.736 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Stores] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 11:40:47.739 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Stores] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 11:40:47.866 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[LocationID], [s].[City], [s].[State]
+FROM [Stores] AS [s]
+2019-10-16 11:40:47.866 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[LocationID], [s].[City], [s].[State]
+FROM [Stores] AS [s]
+2019-10-16 11:40:58.392 -05:00 [INF] Executing DbCommand [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[City], [s].[State], [c].[FirstName], [c].[LastName], [o].[Date], [p].[Title], [p].[Price], [i].[InventoryAmount]
+FROM [Stores] AS [s]
+INNER JOIN [Orders] AS [o] ON [s].[LocationID] = [o].[LocationID]
+INNER JOIN [Customers] AS [c] ON [o].[CustomerID] = [c].[CustomerID]
+INNER JOIN [OrderDetails] AS [o0] ON [o].[OrderID] = [o0].[OrderID]
+INNER JOIN [Inventory] AS [i] ON [o0].[InventoryID] = [i].[InventoryID]
+INNER JOIN [Products] AS [p] ON [i].[ProductID] = [p].[ProductID]
+WHERE ([s].[LocationID] = @__Parse_0) AND @__Parse_0 IS NOT NULL
+2019-10-16 11:40:58.392 -05:00 [INF] Executing DbCommand [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[City], [s].[State], [c].[FirstName], [c].[LastName], [o].[Date], [p].[Title], [p].[Price], [i].[InventoryAmount]
+FROM [Stores] AS [s]
+INNER JOIN [Orders] AS [o] ON [s].[LocationID] = [o].[LocationID]
+INNER JOIN [Customers] AS [c] ON [o].[CustomerID] = [c].[CustomerID]
+INNER JOIN [OrderDetails] AS [o0] ON [o].[OrderID] = [o0].[OrderID]
+INNER JOIN [Inventory] AS [i] ON [o0].[InventoryID] = [i].[InventoryID]
+INNER JOIN [Products] AS [p] ON [i].[ProductID] = [p].[ProductID]
+WHERE ([s].[LocationID] = @__Parse_0) AND @__Parse_0 IS NOT NULL
+2019-10-16 11:43:18.337 -05:00 [INF] Entity Framework Core 3.0.0 initialized 'BlockBusterContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-10-16 11:43:18.352 -05:00 [INF] Entity Framework Core 3.0.0 initialized 'BlockBusterContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-10-16 11:43:19.416 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Stores] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 11:43:19.418 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Stores] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 11:43:19.544 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[LocationID], [s].[City], [s].[State]
+FROM [Stores] AS [s]
+2019-10-16 11:43:19.544 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[LocationID], [s].[City], [s].[State]
+FROM [Stores] AS [s]
+2019-10-16 12:00:07.001 -05:00 [INF] Entity Framework Core 3.0.0 initialized 'BlockBusterContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-10-16 12:00:07.024 -05:00 [INF] Entity Framework Core 3.0.0 initialized 'BlockBusterContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-10-16 12:00:08.554 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Stores] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 12:00:08.557 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Stores] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 12:00:08.690 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[LocationID], [s].[City], [s].[State]
+FROM [Stores] AS [s]
+2019-10-16 12:00:08.690 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[LocationID], [s].[City], [s].[State]
+FROM [Stores] AS [s]
+2019-10-16 12:18:42.157 -05:00 [INF] Entity Framework Core 3.0.0 initialized 'BlockBusterContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-10-16 12:18:42.185 -05:00 [INF] Entity Framework Core 3.0.0 initialized 'BlockBusterContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-10-16 12:18:43.951 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Stores] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 12:18:43.959 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Stores] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 12:18:44.130 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[LocationID], [s].[City], [s].[State]
+FROM [Stores] AS [s]
+2019-10-16 12:18:44.130 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[LocationID], [s].[City], [s].[State]
+FROM [Stores] AS [s]
+2019-10-16 12:24:48.714 -05:00 [INF] Entity Framework Core 3.0.0 initialized 'BlockBusterContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-10-16 12:24:48.730 -05:00 [INF] Entity Framework Core 3.0.0 initialized 'BlockBusterContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-10-16 12:24:49.720 -05:00 [INF] Executing DbCommand [Parameters=[@__custHistory_FirstName_0='?' (Size = 50), @__custHistory_LastName_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[FirstName], [c].[LastName], [o].[Date], [p].[Title], [p].[Price]
+FROM [Customers] AS [c]
+INNER JOIN [Orders] AS [o] ON [c].[CustomerID] = [o].[CustomerID]
+INNER JOIN [OrderDetails] AS [o0] ON [o].[OrderID] = [o0].[OrderID]
+INNER JOIN [Inventory] AS [i] ON [o0].[InventoryID] = [i].[InventoryID]
+INNER JOIN [Products] AS [p] ON [i].[ProductID] = [p].[ProductID]
+WHERE (([c].[FirstName] = @__custHistory_FirstName_0) AND @__custHistory_FirstName_0 IS NOT NULL) AND (([c].[LastName] = @__custHistory_LastName_1) AND @__custHistory_LastName_1 IS NOT NULL)
+2019-10-16 12:24:49.723 -05:00 [INF] Executing DbCommand [Parameters=[@__custHistory_FirstName_0='?' (Size = 50), @__custHistory_LastName_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[FirstName], [c].[LastName], [o].[Date], [p].[Title], [p].[Price]
+FROM [Customers] AS [c]
+INNER JOIN [Orders] AS [o] ON [c].[CustomerID] = [o].[CustomerID]
+INNER JOIN [OrderDetails] AS [o0] ON [o].[OrderID] = [o0].[OrderID]
+INNER JOIN [Inventory] AS [i] ON [o0].[InventoryID] = [i].[InventoryID]
+INNER JOIN [Products] AS [p] ON [i].[ProductID] = [p].[ProductID]
+WHERE (([c].[FirstName] = @__custHistory_FirstName_0) AND @__custHistory_FirstName_0 IS NOT NULL) AND (([c].[LastName] = @__custHistory_LastName_1) AND @__custHistory_LastName_1 IS NOT NULL)
+2019-10-16 12:29:55.128 -05:00 [INF] Entity Framework Core 3.0.0 initialized 'BlockBusterContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-10-16 12:29:55.145 -05:00 [INF] Entity Framework Core 3.0.0 initialized 'BlockBusterContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-10-16 12:29:56.086 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Stores] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 12:29:56.089 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Stores] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 12:29:56.211 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[LocationID], [s].[City], [s].[State]
+FROM [Stores] AS [s]
+2019-10-16 12:29:56.211 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[LocationID], [s].[City], [s].[State]
+FROM [Stores] AS [s]
+2019-10-16 12:29:59.481 -05:00 [INF] Executing DbCommand [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[City], [s].[State], [c].[FirstName], [c].[LastName], [o].[Date], [p].[Title], [p].[Price], [i].[InventoryAmount]
+FROM [Stores] AS [s]
+INNER JOIN [Orders] AS [o] ON [s].[LocationID] = [o].[LocationID]
+INNER JOIN [Customers] AS [c] ON [o].[CustomerID] = [c].[CustomerID]
+INNER JOIN [OrderDetails] AS [o0] ON [o].[OrderID] = [o0].[OrderID]
+INNER JOIN [Inventory] AS [i] ON [o0].[InventoryID] = [i].[InventoryID]
+INNER JOIN [Products] AS [p] ON [i].[ProductID] = [p].[ProductID]
+WHERE ([s].[LocationID] = @__Parse_0) AND @__Parse_0 IS NOT NULL
+2019-10-16 12:29:59.481 -05:00 [INF] Executing DbCommand [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[City], [s].[State], [c].[FirstName], [c].[LastName], [o].[Date], [p].[Title], [p].[Price], [i].[InventoryAmount]
+FROM [Stores] AS [s]
+INNER JOIN [Orders] AS [o] ON [s].[LocationID] = [o].[LocationID]
+INNER JOIN [Customers] AS [c] ON [o].[CustomerID] = [c].[CustomerID]
+INNER JOIN [OrderDetails] AS [o0] ON [o].[OrderID] = [o0].[OrderID]
+INNER JOIN [Inventory] AS [i] ON [o0].[InventoryID] = [i].[InventoryID]
+INNER JOIN [Products] AS [p] ON [i].[ProductID] = [p].[ProductID]
+WHERE ([s].[LocationID] = @__Parse_0) AND @__Parse_0 IS NOT NULL
+2019-10-16 12:30:11.611 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Stores] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 12:30:11.611 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Stores] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 12:30:11.647 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[LocationID], [s].[City], [s].[State]
+FROM [Stores] AS [s]
+2019-10-16 12:30:11.647 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[LocationID], [s].[City], [s].[State]
+FROM [Stores] AS [s]
+2019-10-16 12:30:14.607 -05:00 [INF] Executing DbCommand [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[City], [s].[State], [c].[FirstName], [c].[LastName], [o].[Date], [p].[Title], [p].[Price], [i].[InventoryAmount]
+FROM [Stores] AS [s]
+INNER JOIN [Orders] AS [o] ON [s].[LocationID] = [o].[LocationID]
+INNER JOIN [Customers] AS [c] ON [o].[CustomerID] = [c].[CustomerID]
+INNER JOIN [OrderDetails] AS [o0] ON [o].[OrderID] = [o0].[OrderID]
+INNER JOIN [Inventory] AS [i] ON [o0].[InventoryID] = [i].[InventoryID]
+INNER JOIN [Products] AS [p] ON [i].[ProductID] = [p].[ProductID]
+WHERE ([s].[LocationID] = @__Parse_0) AND @__Parse_0 IS NOT NULL
+2019-10-16 12:30:14.607 -05:00 [INF] Executing DbCommand [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[City], [s].[State], [c].[FirstName], [c].[LastName], [o].[Date], [p].[Title], [p].[Price], [i].[InventoryAmount]
+FROM [Stores] AS [s]
+INNER JOIN [Orders] AS [o] ON [s].[LocationID] = [o].[LocationID]
+INNER JOIN [Customers] AS [c] ON [o].[CustomerID] = [c].[CustomerID]
+INNER JOIN [OrderDetails] AS [o0] ON [o].[OrderID] = [o0].[OrderID]
+INNER JOIN [Inventory] AS [i] ON [o0].[InventoryID] = [i].[InventoryID]
+INNER JOIN [Products] AS [p] ON [i].[ProductID] = [p].[ProductID]
+WHERE ([s].[LocationID] = @__Parse_0) AND @__Parse_0 IS NOT NULL
+2019-10-16 12:31:48.628 -05:00 [INF] Entity Framework Core 3.0.0 initialized 'BlockBusterContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-10-16 12:31:48.647 -05:00 [INF] Entity Framework Core 3.0.0 initialized 'BlockBusterContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-10-16 12:31:49.524 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Stores] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 12:31:49.526 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Stores] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 12:31:49.640 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[LocationID], [s].[City], [s].[State]
+FROM [Stores] AS [s]
+2019-10-16 12:31:49.640 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[LocationID], [s].[City], [s].[State]
+FROM [Stores] AS [s]
+2019-10-16 12:32:03.070 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Stores] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 12:32:03.070 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Stores] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 12:32:03.103 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[LocationID], [s].[City], [s].[State]
+FROM [Stores] AS [s]
+2019-10-16 12:32:03.103 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[LocationID], [s].[City], [s].[State]
+FROM [Stores] AS [s]
+2019-10-16 12:32:06.418 -05:00 [INF] Executing DbCommand [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[City], [s].[State], [c].[FirstName], [c].[LastName], [o].[Date], [p].[Title], [p].[Price], [i].[InventoryAmount]
+FROM [Stores] AS [s]
+INNER JOIN [Orders] AS [o] ON [s].[LocationID] = [o].[LocationID]
+INNER JOIN [Customers] AS [c] ON [o].[CustomerID] = [c].[CustomerID]
+INNER JOIN [OrderDetails] AS [o0] ON [o].[OrderID] = [o0].[OrderID]
+INNER JOIN [Inventory] AS [i] ON [o0].[InventoryID] = [i].[InventoryID]
+INNER JOIN [Products] AS [p] ON [i].[ProductID] = [p].[ProductID]
+WHERE ([s].[LocationID] = @__Parse_0) AND @__Parse_0 IS NOT NULL
+2019-10-16 12:32:06.419 -05:00 [INF] Executing DbCommand [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[City], [s].[State], [c].[FirstName], [c].[LastName], [o].[Date], [p].[Title], [p].[Price], [i].[InventoryAmount]
+FROM [Stores] AS [s]
+INNER JOIN [Orders] AS [o] ON [s].[LocationID] = [o].[LocationID]
+INNER JOIN [Customers] AS [c] ON [o].[CustomerID] = [c].[CustomerID]
+INNER JOIN [OrderDetails] AS [o0] ON [o].[OrderID] = [o0].[OrderID]
+INNER JOIN [Inventory] AS [i] ON [o0].[InventoryID] = [i].[InventoryID]
+INNER JOIN [Products] AS [p] ON [i].[ProductID] = [p].[ProductID]
+WHERE ([s].[LocationID] = @__Parse_0) AND @__Parse_0 IS NOT NULL
+2019-10-16 13:21:49.570 -05:00 [INF] Entity Framework Core 3.0.0 initialized 'BlockBusterContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-10-16 13:21:49.594 -05:00 [INF] Entity Framework Core 3.0.0 initialized 'BlockBusterContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-10-16 13:21:51.179 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Stores] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 13:21:51.181 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Stores] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 13:21:51.319 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[LocationID], [s].[City], [s].[State]
+FROM [Stores] AS [s]
+2019-10-16 13:21:51.319 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[LocationID], [s].[City], [s].[State]
+FROM [Stores] AS [s]
+2019-10-16 13:22:12.177 -05:00 [INF] Executing DbCommand [Parameters=[@__customer1_FirstName_0='?' (Size = 50), @__customer1_LastName_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customers] AS [c]
+        WHERE (([c].[FirstName] = @__customer1_FirstName_0) AND @__customer1_FirstName_0 IS NOT NULL) AND (([c].[LastName] = @__customer1_LastName_1) AND @__customer1_LastName_1 IS NOT NULL)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 13:22:12.177 -05:00 [INF] Executing DbCommand [Parameters=[@__customer1_FirstName_0='?' (Size = 50), @__customer1_LastName_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customers] AS [c]
+        WHERE (([c].[FirstName] = @__customer1_FirstName_0) AND @__customer1_FirstName_0 IS NOT NULL) AND (([c].[LastName] = @__customer1_LastName_1) AND @__customer1_LastName_1 IS NOT NULL)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 13:22:14.240 -05:00 [INF] Executing DbCommand [Parameters=[@p0='?' (Size = 50), @p1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Customers] ([FirstName], [LastName])
+VALUES (@p0, @p1);
+SELECT [CustomerID]
+FROM [Customers]
+WHERE @@ROWCOUNT = 1 AND [CustomerID] = scope_identity();
+2019-10-16 13:22:14.241 -05:00 [INF] Executing DbCommand [Parameters=[@p0='?' (Size = 50), @p1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Customers] ([FirstName], [LastName])
+VALUES (@p0, @p1);
+SELECT [CustomerID]
+FROM [Customers]
+WHERE @@ROWCOUNT = 1 AND [CustomerID] = scope_identity();
+2019-10-16 13:22:14.469 -05:00 [INF] Executing DbCommand [Parameters=[@__storeId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[InventoryID], [i].[InventoryAmount], [i].[LocationID], [i].[ProductID], [p].[ProductID], [p].[Details], [p].[Price], [p].[Rating], [p].[Title]
+FROM [Inventory] AS [i]
+INNER JOIN [Products] AS [p] ON [i].[ProductID] = [p].[ProductID]
+WHERE ([i].[LocationID] = @__storeId_0) AND @__storeId_0 IS NOT NULL
+2019-10-16 13:22:14.469 -05:00 [INF] Executing DbCommand [Parameters=[@__storeId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[InventoryID], [i].[InventoryAmount], [i].[LocationID], [i].[ProductID], [p].[ProductID], [p].[Details], [p].[Price], [p].[Rating], [p].[Title]
+FROM [Inventory] AS [i]
+INNER JOIN [Products] AS [p] ON [i].[ProductID] = [p].[ProductID]
+WHERE ([i].[LocationID] = @__storeId_0) AND @__storeId_0 IS NOT NULL
+2019-10-16 13:22:35.419 -05:00 [INF] Executing DbCommand [Parameters=[@__search_0='?' (Size = 80)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Details], [p].[Price], [p].[Rating], [p].[Title]
+FROM [Products] AS [p]
+WHERE ([p].[Title] = @__search_0) AND @__search_0 IS NOT NULL
+2019-10-16 13:22:35.419 -05:00 [INF] Executing DbCommand [Parameters=[@__search_0='?' (Size = 80)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Details], [p].[Price], [p].[Rating], [p].[Title]
+FROM [Products] AS [p]
+WHERE ([p].[Title] = @__search_0) AND @__search_0 IS NOT NULL
+2019-10-16 13:22:51.304 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Stores] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 13:22:51.305 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Stores] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 13:22:51.339 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[LocationID], [s].[City], [s].[State]
+FROM [Stores] AS [s]
+2019-10-16 13:22:51.340 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[LocationID], [s].[City], [s].[State]
+FROM [Stores] AS [s]
+2019-10-16 13:22:53.320 -05:00 [INF] Executing DbCommand [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[City], [s].[State], [c].[FirstName], [c].[LastName], [o].[Date], [p].[Title], [p].[Price], [i].[InventoryAmount]
+FROM [Stores] AS [s]
+INNER JOIN [Orders] AS [o] ON [s].[LocationID] = [o].[LocationID]
+INNER JOIN [Customers] AS [c] ON [o].[CustomerID] = [c].[CustomerID]
+INNER JOIN [OrderDetails] AS [o0] ON [o].[OrderID] = [o0].[OrderID]
+INNER JOIN [Inventory] AS [i] ON [o0].[InventoryID] = [i].[InventoryID]
+INNER JOIN [Products] AS [p] ON [i].[ProductID] = [p].[ProductID]
+WHERE ([s].[LocationID] = @__Parse_0) AND @__Parse_0 IS NOT NULL
+2019-10-16 13:22:53.320 -05:00 [INF] Executing DbCommand [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[City], [s].[State], [c].[FirstName], [c].[LastName], [o].[Date], [p].[Title], [p].[Price], [i].[InventoryAmount]
+FROM [Stores] AS [s]
+INNER JOIN [Orders] AS [o] ON [s].[LocationID] = [o].[LocationID]
+INNER JOIN [Customers] AS [c] ON [o].[CustomerID] = [c].[CustomerID]
+INNER JOIN [OrderDetails] AS [o0] ON [o].[OrderID] = [o0].[OrderID]
+INNER JOIN [Inventory] AS [i] ON [o0].[InventoryID] = [i].[InventoryID]
+INNER JOIN [Products] AS [p] ON [i].[ProductID] = [p].[ProductID]
+WHERE ([s].[LocationID] = @__Parse_0) AND @__Parse_0 IS NOT NULL
+2019-10-16 13:53:27.020 -05:00 [INF] Entity Framework Core 3.0.0 initialized 'BlockBusterContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-10-16 13:53:27.054 -05:00 [INF] Entity Framework Core 3.0.0 initialized 'BlockBusterContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-10-16 13:53:28.686 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Stores] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 13:53:28.691 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Stores] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 13:53:28.858 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[LocationID], [s].[City], [s].[State]
+FROM [Stores] AS [s]
+2019-10-16 13:53:28.858 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[LocationID], [s].[City], [s].[State]
+FROM [Stores] AS [s]
+2019-10-16 13:54:18.763 -05:00 [INF] Executing DbCommand [Parameters=[@__customer1_FirstName_0='?' (Size = 50), @__customer1_LastName_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customers] AS [c]
+        WHERE (([c].[FirstName] = @__customer1_FirstName_0) AND @__customer1_FirstName_0 IS NOT NULL) AND (([c].[LastName] = @__customer1_LastName_1) AND @__customer1_LastName_1 IS NOT NULL)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 13:54:18.764 -05:00 [INF] Executing DbCommand [Parameters=[@__customer1_FirstName_0='?' (Size = 50), @__customer1_LastName_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customers] AS [c]
+        WHERE (([c].[FirstName] = @__customer1_FirstName_0) AND @__customer1_FirstName_0 IS NOT NULL) AND (([c].[LastName] = @__customer1_LastName_1) AND @__customer1_LastName_1 IS NOT NULL)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 13:54:18.921 -05:00 [INF] Executing DbCommand [Parameters=[@__firstname_0='?' (Size = 50), @__lastname_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[CustomerID], [c].[FirstName], [c].[LastName]
+FROM [Customers] AS [c]
+WHERE (([c].[FirstName] = @__firstname_0) AND @__firstname_0 IS NOT NULL) AND (([c].[LastName] = @__lastname_1) AND @__lastname_1 IS NOT NULL)
+2019-10-16 13:54:18.921 -05:00 [INF] Executing DbCommand [Parameters=[@__firstname_0='?' (Size = 50), @__lastname_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[CustomerID], [c].[FirstName], [c].[LastName]
+FROM [Customers] AS [c]
+WHERE (([c].[FirstName] = @__firstname_0) AND @__firstname_0 IS NOT NULL) AND (([c].[LastName] = @__lastname_1) AND @__lastname_1 IS NOT NULL)
+2019-10-16 13:54:19.106 -05:00 [INF] Executing DbCommand [Parameters=[@__storeId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[InventoryID], [i].[InventoryAmount], [i].[LocationID], [i].[ProductID], [p].[ProductID], [p].[Details], [p].[Price], [p].[Rating], [p].[Title]
+FROM [Inventory] AS [i]
+INNER JOIN [Products] AS [p] ON [i].[ProductID] = [p].[ProductID]
+WHERE ([i].[LocationID] = @__storeId_0) AND @__storeId_0 IS NOT NULL
+2019-10-16 13:54:19.106 -05:00 [INF] Executing DbCommand [Parameters=[@__storeId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[InventoryID], [i].[InventoryAmount], [i].[LocationID], [i].[ProductID], [p].[ProductID], [p].[Details], [p].[Price], [p].[Rating], [p].[Title]
+FROM [Inventory] AS [i]
+INNER JOIN [Products] AS [p] ON [i].[ProductID] = [p].[ProductID]
+WHERE ([i].[LocationID] = @__storeId_0) AND @__storeId_0 IS NOT NULL
+2019-10-16 13:54:39.454 -05:00 [INF] Executing DbCommand [Parameters=[@__search_0='?' (Size = 80)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Details], [p].[Price], [p].[Rating], [p].[Title]
+FROM [Products] AS [p]
+WHERE ([p].[Title] = @__search_0) AND @__search_0 IS NOT NULL
+2019-10-16 13:54:39.454 -05:00 [INF] Executing DbCommand [Parameters=[@__search_0='?' (Size = 80)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Details], [p].[Price], [p].[Rating], [p].[Title]
+FROM [Products] AS [p]
+WHERE ([p].[Title] = @__search_0) AND @__search_0 IS NOT NULL
+2019-10-16 13:54:39.497 -05:00 [INF] Executing DbCommand [Parameters=[@__sqlProduct_ProductId_0='?' (DbType = Int32), @__b_LocationId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [i].[InventoryID], [i].[InventoryAmount], [i].[LocationID], [i].[ProductID]
+FROM [Inventory] AS [i]
+WHERE (([i].[ProductID] = @__sqlProduct_ProductId_0) AND @__sqlProduct_ProductId_0 IS NOT NULL) AND ((@__b_LocationId_1 = [i].[LocationID]) AND @__b_LocationId_1 IS NOT NULL)
+2019-10-16 13:54:39.497 -05:00 [INF] Executing DbCommand [Parameters=[@__sqlProduct_ProductId_0='?' (DbType = Int32), @__b_LocationId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [i].[InventoryID], [i].[InventoryAmount], [i].[LocationID], [i].[ProductID]
+FROM [Inventory] AS [i]
+WHERE (([i].[ProductID] = @__sqlProduct_ProductId_0) AND @__sqlProduct_ProductId_0 IS NOT NULL) AND ((@__b_LocationId_1 = [i].[LocationID]) AND @__b_LocationId_1 IS NOT NULL)
+2019-10-16 13:54:39.890 -05:00 [INF] Executing DbCommand [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([CustomerID], [Date], [LocationID])
+VALUES (@p0, @p1, @p2);
+SELECT [OrderID]
+FROM [Orders]
+WHERE @@ROWCOUNT = 1 AND [OrderID] = scope_identity();
+2019-10-16 13:54:39.890 -05:00 [INF] Executing DbCommand [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([CustomerID], [Date], [LocationID])
+VALUES (@p0, @p1, @p2);
+SELECT [OrderID]
+FROM [Orders]
+WHERE @@ROWCOUNT = 1 AND [OrderID] = scope_identity();
+2019-10-16 13:54:40.053 -05:00 [INF] Executing DbCommand [Parameters=[@__b_LocationId_0='?' (DbType = Int32), @__p_ProductId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [i].[InventoryID], [i].[InventoryAmount], [i].[LocationID], [i].[ProductID]
+FROM [Inventory] AS [i]
+WHERE (([i].[LocationID] = @__b_LocationId_0) AND @__b_LocationId_0 IS NOT NULL) AND (([i].[ProductID] = @__p_ProductId_1) AND @__p_ProductId_1 IS NOT NULL)
+2019-10-16 13:54:40.053 -05:00 [INF] Executing DbCommand [Parameters=[@__b_LocationId_0='?' (DbType = Int32), @__p_ProductId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [i].[InventoryID], [i].[InventoryAmount], [i].[LocationID], [i].[ProductID]
+FROM [Inventory] AS [i]
+WHERE (([i].[LocationID] = @__b_LocationId_0) AND @__b_LocationId_0 IS NOT NULL) AND (([i].[ProductID] = @__p_ProductId_1) AND @__p_ProductId_1 IS NOT NULL)
+2019-10-16 13:54:40.129 -05:00 [INF] Executing DbCommand [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Inventory] SET [InventoryAmount] = @p0
+WHERE [InventoryID] = @p1;
+SELECT @@ROWCOUNT;
+2019-10-16 13:54:40.129 -05:00 [INF] Executing DbCommand [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Inventory] SET [InventoryAmount] = @p0
+WHERE [InventoryID] = @p1;
+SELECT @@ROWCOUNT;
+2019-10-16 13:54:40.225 -05:00 [INF] Executing DbCommand [Parameters=[@__p_ProductId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [i].[InventoryID], [i].[InventoryAmount], [i].[LocationID], [i].[ProductID], [p].[ProductID], [p].[Details], [p].[Price], [p].[Rating], [p].[Title]
+FROM [Inventory] AS [i]
+INNER JOIN [Products] AS [p] ON [i].[ProductID] = [p].[ProductID]
+WHERE ([i].[ProductID] = @__p_ProductId_0) AND @__p_ProductId_0 IS NOT NULL
+2019-10-16 13:54:40.225 -05:00 [INF] Executing DbCommand [Parameters=[@__p_ProductId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [i].[InventoryID], [i].[InventoryAmount], [i].[LocationID], [i].[ProductID], [p].[ProductID], [p].[Details], [p].[Price], [p].[Rating], [p].[Title]
+FROM [Inventory] AS [i]
+INNER JOIN [Products] AS [p] ON [i].[ProductID] = [p].[ProductID]
+WHERE ([i].[ProductID] = @__p_ProductId_0) AND @__p_ProductId_0 IS NOT NULL
+2019-10-16 13:54:40.314 -05:00 [INF] Executing DbCommand [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [OrderDetails] ([InventoryID], [OrderID])
+VALUES (@p0, @p1);
+SELECT [OrderDetailID]
+FROM [OrderDetails]
+WHERE @@ROWCOUNT = 1 AND [OrderDetailID] = scope_identity();
+2019-10-16 13:54:40.314 -05:00 [INF] Executing DbCommand [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [OrderDetails] ([InventoryID], [OrderID])
+VALUES (@p0, @p1);
+SELECT [OrderDetailID]
+FROM [OrderDetails]
+WHERE @@ROWCOUNT = 1 AND [OrderDetailID] = scope_identity();
+2019-10-16 13:55:15.323 -05:00 [INF] Executing DbCommand [Parameters=[@__custHistory_FirstName_0='?' (Size = 50), @__custHistory_LastName_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderID] AS [OrderId], [c].[FirstName], [c].[LastName], [o].[Date], [p].[Title], [p].[Price]
+FROM [Customers] AS [c]
+INNER JOIN [Orders] AS [o] ON [c].[CustomerID] = [o].[CustomerID]
+INNER JOIN [OrderDetails] AS [o0] ON [o].[OrderID] = [o0].[OrderID]
+INNER JOIN [Inventory] AS [i] ON [o0].[InventoryID] = [i].[InventoryID]
+INNER JOIN [Products] AS [p] ON [i].[ProductID] = [p].[ProductID]
+WHERE (([c].[FirstName] = @__custHistory_FirstName_0) AND @__custHistory_FirstName_0 IS NOT NULL) AND (([c].[LastName] = @__custHistory_LastName_1) AND @__custHistory_LastName_1 IS NOT NULL)
+2019-10-16 13:55:15.323 -05:00 [INF] Executing DbCommand [Parameters=[@__custHistory_FirstName_0='?' (Size = 50), @__custHistory_LastName_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderID] AS [OrderId], [c].[FirstName], [c].[LastName], [o].[Date], [p].[Title], [p].[Price]
+FROM [Customers] AS [c]
+INNER JOIN [Orders] AS [o] ON [c].[CustomerID] = [o].[CustomerID]
+INNER JOIN [OrderDetails] AS [o0] ON [o].[OrderID] = [o0].[OrderID]
+INNER JOIN [Inventory] AS [i] ON [o0].[InventoryID] = [i].[InventoryID]
+INNER JOIN [Products] AS [p] ON [i].[ProductID] = [p].[ProductID]
+WHERE (([c].[FirstName] = @__custHistory_FirstName_0) AND @__custHistory_FirstName_0 IS NOT NULL) AND (([c].[LastName] = @__custHistory_LastName_1) AND @__custHistory_LastName_1 IS NOT NULL)
+2019-10-16 13:56:03.151 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Stores] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 13:56:03.151 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Stores] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2019-10-16 13:56:03.183 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[LocationID], [s].[City], [s].[State]
+FROM [Stores] AS [s]
+2019-10-16 13:56:03.183 -05:00 [INF] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[LocationID], [s].[City], [s].[State]
+FROM [Stores] AS [s]
+2019-10-16 13:56:06.913 -05:00 [INF] Executing DbCommand [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[City], [s].[State], [c].[FirstName], [c].[LastName], [o].[Date], [p].[Title], [p].[Price], [i].[InventoryAmount]
+FROM [Stores] AS [s]
+INNER JOIN [Orders] AS [o] ON [s].[LocationID] = [o].[LocationID]
+INNER JOIN [Customers] AS [c] ON [o].[CustomerID] = [c].[CustomerID]
+INNER JOIN [OrderDetails] AS [o0] ON [o].[OrderID] = [o0].[OrderID]
+INNER JOIN [Inventory] AS [i] ON [o0].[InventoryID] = [i].[InventoryID]
+INNER JOIN [Products] AS [p] ON [i].[ProductID] = [p].[ProductID]
+WHERE ([s].[LocationID] = @__Parse_0) AND @__Parse_0 IS NOT NULL
+2019-10-16 13:56:06.913 -05:00 [INF] Executing DbCommand [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[City], [s].[State], [c].[FirstName], [c].[LastName], [o].[Date], [p].[Title], [p].[Price], [i].[InventoryAmount]
+FROM [Stores] AS [s]
+INNER JOIN [Orders] AS [o] ON [s].[LocationID] = [o].[LocationID]
+INNER JOIN [Customers] AS [c] ON [o].[CustomerID] = [c].[CustomerID]
+INNER JOIN [OrderDetails] AS [o0] ON [o].[OrderID] = [o0].[OrderID]
+INNER JOIN [Inventory] AS [i] ON [o0].[InventoryID] = [i].[InventoryID]
+INNER JOIN [Products] AS [p] ON [i].[ProductID] = [p].[ProductID]
+WHERE ([s].[LocationID] = @__Parse_0) AND @__Parse_0 IS NOT NULL
