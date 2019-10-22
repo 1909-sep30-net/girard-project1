@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Text;
+using System.Collections;
 
 namespace DataAccess.Repositories
 {
@@ -32,6 +33,12 @@ namespace DataAccess.Repositories
                 Console.WriteLine("There are no stores open");
             }
             return locations;
+        }
+
+        public BlockBuster SelectStore(List<BlockBuster> stores, int id)
+        {
+            var q = stores.Select(b => b).Where(n => n.LocationId == id);
+            return q.First();
         }
 
         public bool SearchForCustomer(Customer customer1)
@@ -83,7 +90,7 @@ namespace DataAccess.Repositories
             _dbContext.SaveChanges();
         }
 
-        public List<Customers> GetCustomers(string firstname, string lastname)
+        public List<Customers> GetCustomers()
         {
             return _dbContext.Customers.Select(c => c).ToList();
         }
@@ -107,13 +114,21 @@ namespace DataAccess.Repositories
             blogic.OrderId = order.OrderId;
         }
 
-        public void DisplayInventory(int storeId)
+        public List<Product> GetInventory(int storeId, List<Product> products)
         {
-            foreach (Inventory s in _dbContext.Inventory.Include(p => p.Product).Where(l => l.LocationId == storeId))
+            if (_dbContext.Inventory.Any())
             {
-                Console.WriteLine($"\nTitle: {s.Product.Title} " +
-                    $"Rated: {s.Product.Rating}\nDetails: {s.Product.Details}\nPrice: {s.Product.Price}");
+                foreach (Inventory s in _dbContext.Inventory.Include(p => p.Product).Where(l => l.LocationId == storeId))
+                {
+                    Product p = new Product(s.Product.ProductId,s.Product.Title, s.Product.Details, s.Product.Price, s.Product.Rating,s.InventoryAmount);
+                    products.Add(p);
+                }
             }
+            else
+            {
+                Console.WriteLine("This store has gone out of business");
+            }
+            return products;
         }
 
         public void DeleteInventory(BlockBuster b, Product p)
@@ -129,6 +144,58 @@ namespace DataAccess.Repositories
             Inventory.InventoryAmount = p.InventoryAmount;
             _dbContext.SaveChanges();
             p.ProductId = Inventory.ProductId;
+        }
+
+        public List<CustomerOrderHistory> GetCustomerOrderHistory(Customer custHistory)
+        {
+            List<CustomerOrderHistory> orders = new List<CustomerOrderHistory>();
+            var query = from customerS in _dbContext.Customers
+                        join order in _dbContext.Orders on customerS.CustomerId equals order.CustomerId
+                        join orderD in _dbContext.OrderDetails on order.OrderId equals orderD.OrderId
+                        join inv in _dbContext.Inventory on orderD.InventoryId equals inv.InventoryId
+                        join prod in _dbContext.Products on inv.ProductId equals prod.ProductId
+                        where customerS.FirstName == custHistory.FirstName && customerS.LastName == custHistory.LastName
+                        select new { order.OrderId, customerS.FirstName, customerS.LastName, order.Date, prod.Title, prod.Price };
+            foreach (var item in query)
+            {
+                CustomerOrderHistory coh = new CustomerOrderHistory
+                {
+                    OrderID = item.OrderId,
+                    Name = $"{item.FirstName} {item.LastName}",
+                    Date = item.Date,
+                    Title = item.Title,
+                    Price = item.Price
+                };
+                orders.Add(coh);
+            }
+            return orders;
+        }
+
+        public List<StoreOrderHistory> GetStoreOrderHistory(int id)
+        {
+            List<StoreOrderHistory> orders = new List<StoreOrderHistory>();
+            var storeQuery = from store in _dbContext.Stores
+                             join order in _dbContext.Orders on store.LocationId equals order.LocationId
+                             join storeCust in _dbContext.Customers on order.CustomerId equals storeCust.CustomerId
+                             join orderD in _dbContext.OrderDetails on order.OrderId equals orderD.OrderId
+                             join inv in _dbContext.Inventory on orderD.InventoryId equals inv.InventoryId
+                             join prod in _dbContext.Products on inv.ProductId equals prod.ProductId
+                             where store.LocationId == id
+                             select new { order.OrderId, store.City, store.State, storeCust.FirstName, storeCust.LastName, order.Date, prod.Title, prod.Price, inv.InventoryAmount };
+            foreach (var item in storeQuery)
+            {
+                StoreOrderHistory soh = new StoreOrderHistory
+                {
+                    OrderID = item.OrderId,
+                    Name = $"{item.FirstName} {item.LastName}",
+                    Date = item.Date,
+                    Title = item.Title,
+                    Price = item.Price,
+                    InventoryAmount = item.InventoryAmount
+                };
+                orders.Add(soh);
+            }
+            return orders;
         }
 
 

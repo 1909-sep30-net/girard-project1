@@ -143,7 +143,7 @@ namespace Project0
                             {
                                 Console.WriteLine($"Store Location: {item.City}, {item.State}\nName: {item.FirstName} {item.LastName} Date: {item.Date} \nTitle: {item.Title} Price: ${item.Price}\n In Stock: {item.InventoryAmount}\n");
                             }
-                        } catch (Exception x)
+                        } catch 
                         {
                             Console.Clear();
                             Console.WriteLine($"\nYou forgot to enter a valid ID.");

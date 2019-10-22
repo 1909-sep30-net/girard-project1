@@ -7,7 +7,7 @@ namespace BusinessLogic
     public class Order
     {
 
-        public DateTime OrderDate { get; }
+        public DateTime OrderDate { get; set; }
         public List<Product> ProductList = new List<Product>();
         public int OrderId { get; set; }
         public int StoreId { get; set; }
