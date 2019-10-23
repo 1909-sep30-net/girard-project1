@@ -12,11 +12,17 @@ using Microsoft.Extensions.Hosting;
 using DataAccess;
 using DataAccess.Entities;
 using DataAccess.Repositories;
+using Serilog;
+using Microsoft.Extensions.Logging;
 
 namespace Project1
 {
     public class Startup
     {
+        public static readonly ILoggerFactory MyLoggerFactory = LoggerFactory.Create(builder =>
+        {
+            builder.AddSerilog();
+        });
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -28,9 +34,12 @@ namespace Project1
         public void ConfigureServices(IServiceCollection services)
         {
             string connectionString = Configuration.GetConnectionString("BlockBusterDb");
+            Log.Logger = new LoggerConfiguration().WriteTo.File("D:\\Revature\\girard-project1\\Project1\\log.txt").CreateLogger();
             services.AddDbContext<BlockBusterContext>(options =>
             {
                 options.UseSqlServer(connectionString);
+                options.UseLoggerFactory(MyLoggerFactory.AddSerilog(Log.Logger));
+
             });
 
             services.AddScoped<BlockBusterRepository>();

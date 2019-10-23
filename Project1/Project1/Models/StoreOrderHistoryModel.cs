@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ namespace Project1.Models
         public DateTime Date { get; set; }
         public string Title { get; set; }
         public decimal Price { get; set; }
+        [Required]
+        [DisplayName("Inventory Amount")]
         public int InventoryAmount { get; set; }
     }
 }

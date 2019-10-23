@@ -25,15 +25,19 @@ namespace Project1.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+
+                    return View(cModel);
+                }
                 TempData["fname"] = cModel.FirstName;
                 TempData["lname"] = cModel.LastName;
-
-
                 return RedirectToAction(nameof(Details));
             }
             catch
             {
-                return View();
+                ModelState.AddModelError("Name", "Invalid Name");
+                return View(cModel);
             }
         }
 
