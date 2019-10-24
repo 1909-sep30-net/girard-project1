@@ -24,3 +24,12 @@ steps:
     projects: 'Project1'
     arguments: '-c $(buildConfiguration) --collect "XPlat Code Coverage"'
     testRunTitle: 'test'
+
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Free Trial(1d7a521a-2dd4-416f-a905-962c08e5dd5a)'
+    appType: 'webApp'
+    WebAppName: 'gsanfordblockbuster'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
