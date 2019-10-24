@@ -17,6 +17,9 @@ steps:
   displayName: 'dotnet build $(buildConfiguration)'
   workingDirectory: Project1
 
-- script: dotnet test
-  displayName: dotnet test
-  workingDirectory: Project1
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: 'Project1'
+    arguments: '-c $(buildConfiguration)'
+    testRunTitle: 'test'
