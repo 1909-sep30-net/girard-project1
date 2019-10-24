@@ -21,7 +21,6 @@ namespace Project1.Controllers
         // GET: Order
         public ActionResult Index()
         {
-            Session
             List<BlockBuster> locations = new List<BlockBuster>();
             _repository.GetStores(locations);
 
