@@ -18,8 +18,9 @@ steps:
   workingDirectory: Project1
 
 - task: DotNetCoreCLI@2
+  displayName: dotnet test
   inputs:
     command: 'test'
     projects: 'Project1'
-    arguments: '-c $(buildConfiguration) --collect "Code Coverage"'
+    arguments: '-c $(buildConfiguration) --collect "XPlat Code Coverage"'
     testRunTitle: 'test'
