@@ -1,0 +1,47 @@
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'dotnet build $(buildConfiguration)'
+  workingDirectory: Project1
+
+- task: DotNetCoreCLI@2
+  displayName: dotnet test
+  inputs:
+    command: 'test'
+    projects: 'Project1'
+    arguments: '-c $(buildConfiguration) --collect "XPlat Code Coverage"'
+    testRunTitle: 'test'
+
+- task: PublishCodeCoverageResults@1
+  displayName: Publish code coverage
+  inputs:
+    codeCoverageTool: 'Cobertura'
+    summaryFileLocation: '$(Agent.TempDirectory)/**/coverage.cobertura.xml'
+
+- task: DotNetCoreCLI@2
+  displayName: publish
+  inputs:
+   command: 'publish'
+   publishWebProjects: true
+   zipAfterPublish: true
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Free Trial(2)(1d7a521a-2dd4-416f-a905-962c08e5dd5a)'
+    appType: 'webApp'
+    WebAppName: 'gsanfordblockbuster'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
