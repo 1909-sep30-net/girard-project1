@@ -60,7 +60,6 @@ namespace Project1.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
 
                 return RedirectToAction(nameof(Index));
             }
@@ -83,7 +82,6 @@ namespace Project1.Controllers
         {
             try
             {
-                // TODO: Add update logic here
 
                 return RedirectToAction(nameof(Index));
             }
@@ -106,7 +104,6 @@ namespace Project1.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
 
                 return RedirectToAction(nameof(Index));
             }
