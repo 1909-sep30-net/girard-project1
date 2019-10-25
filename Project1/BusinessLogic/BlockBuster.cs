@@ -13,7 +13,5 @@ namespace BusinessLogic
             this.Location = location;
             this.LocationId = id;
         }
-
-
     }
 }

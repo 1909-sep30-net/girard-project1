@@ -6,6 +6,7 @@ namespace BusinessLogic
     public class Product
     {
         private int _InventoryAmount;
+
         public int InventoryAmount
         {
             get => _InventoryAmount;
@@ -39,6 +40,7 @@ namespace BusinessLogic
         }
 
         public decimal Price { get; set; }
+
         public string Rating { get; set; }
 
         public string Details { get; set; }

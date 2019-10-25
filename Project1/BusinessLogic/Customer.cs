@@ -4,10 +4,8 @@ namespace BusinessLogic
 {
     public class Customer
     {
-
         private string _FirstName;
         private string _LastName;
-
 
         public string FirstName
         {
@@ -25,6 +23,7 @@ namespace BusinessLogic
                 _FirstName = value;
             } 
         }
+
         public string LastName 
         {
             get => _LastName;
@@ -52,7 +51,5 @@ namespace BusinessLogic
             this.FirstName = FName;
             this.LastName = LName;
         }
-
-
     }
 }
