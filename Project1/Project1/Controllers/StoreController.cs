@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using BusinessLogic;
 using DataAccess.Repositories;
 using Microsoft.AspNetCore.Http;

@@ -4,8 +4,6 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
-using System.Text;
-using System.Collections;
 
 namespace DataAccess.Repositories
 {
@@ -72,9 +70,9 @@ namespace DataAccess.Repositories
             var sqlProduct = _dbContext.Products.First(p => p.Title == search);
             var sqlInventory = _dbContext.Inventory.First(i => 
             (i.ProductId == sqlProduct.ProductId) && (b.LocationId == i.LocationId));
-            Product product;
-            return product = new Product(sqlProduct.ProductId, sqlProduct.Title, sqlProduct.Details, 
+            Product product = new Product(sqlProduct.ProductId, sqlProduct.Title, sqlProduct.Details, 
                 sqlProduct.Price, sqlProduct.Rating, sqlInventory.InventoryAmount);
+            return product;
         }   
 
         public void AddProductToOrder(Order o, Product p)
