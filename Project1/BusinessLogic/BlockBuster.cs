@@ -15,15 +15,5 @@ namespace BusinessLogic
         }
 
 
-        public void LogOrder(Order order)
-        {
-            OrderHistory.Add(order);
-        }
-
-        public void AddCustomer(Customer c)
-        {
-            Customers.Add(c);
-        }
-
     }
 }

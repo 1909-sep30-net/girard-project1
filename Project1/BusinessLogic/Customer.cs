@@ -54,10 +54,6 @@ namespace BusinessLogic
             this.LastName = LName;
         }
 
-        public void LogOrder(Order order)
-        {
-            OrderHistory.Add(order);
-        }
 
     }
 }
