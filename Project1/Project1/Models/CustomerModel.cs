@@ -7,6 +7,7 @@ namespace Project1.Models
     public class CustomerModel
     {
         [Required]
+        [DisplayName("ID")]
         public int CustomerID { get; set; }
         [Required]
         [DisplayName("First Name")]
