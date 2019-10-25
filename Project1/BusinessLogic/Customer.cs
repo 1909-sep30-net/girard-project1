@@ -47,7 +47,6 @@ namespace BusinessLogic
 
         public Order order { get; set; }
 
-        public List<Order> OrderHistory = new List<Order>();
 
         public Customer(string FName, string LName)
         {

@@ -8,12 +8,6 @@ namespace BusinessLogic
 
         public int LocationId { get; set; }
 
-        public List<Product> Inventory = new List<Product>();
-
-        public List<Order> OrderHistory = new List<Order>();
-
-        public List<Customer> Customers = new List<Customer>();
-
         public BlockBuster (int id, string location)
         {
             this.Location = location;

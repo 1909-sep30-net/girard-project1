@@ -8,7 +8,6 @@ namespace BusinessLogic
     {
 
         public DateTime OrderDate { get; set; }
-        public List<Product> ProductList = new List<Product>();
         public int OrderId { get; set; }
         public int StoreId { get; set; }
         public int CustomerId { get; set; }
