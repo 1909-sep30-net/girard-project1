@@ -23,6 +23,8 @@ steps:
     organization: 'gsanford13'
     scannerMode: 'MSBuild'
     projectKey: 'gsanfordblockbuster'
+    extraProperties: |
+      sonar.exclusions=**/lib/**
 
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
